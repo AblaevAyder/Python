@@ -45,25 +45,27 @@ while notdigits[0]!="":
     
     for a in notdigits:
         if notdigits[x]=="*":
-            numbers[x]=int(numbers[x])*int(numbers[x+1])
+            numbers[x]=float(numbers[x])*float(numbers[x+1])
             del numbers[x+1]
             del notdigits[x]
             break
         elif notdigits[x]=="/":
-            numbers[x]=int(numbers[x])/int(numbers[x+1])
+            numbers[x]=float(numbers[x])/float(numbers[x+1])
             del numbers[x+1]
             del notdigits[x]
             break
         elif notdigits[x]=="+" and notdigits[x+1]!="/" and notdigits[x+1]!="*":
-            numbers[x]=int(numbers[x])+int(numbers[x+1])
+            numbers[x]=float(numbers[x])+float(numbers[x+1])
             del numbers[x+1]
             del notdigits[x]
             break
         elif notdigits[x]=="-" and notdigits[x+1]!="/" and notdigits[x+1]!="*":
-            numbers[x]=int(numbers[x])-int(numbers[x+1])
+            numbers[x]=float(numbers[x])-float(numbers[x+1])
             del numbers[x+1]
             del notdigits[x]
             break
+
+        x+=1
 print(numbers[0])
         
 
